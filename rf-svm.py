@@ -15,7 +15,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import LeaveOneOut
 from sklearn.neighbors import KNeighborsClassifier 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
-from sklearn.externals import joblib
+# from sklearn.externals import joblib
+import joblib
 
 """
 	This script implements rf-svm on the SNP dataset.
@@ -27,7 +28,7 @@ from sklearn.externals import joblib
 """
 
 start = datetime.now()
-data_file = 'dataset/encoded_snp.csv'
+data_file = 'C:/Users/user/Documents/GitHub/SNP-ML/dataset/encoded_snp.csv'
 data = pd.read_csv(data_file, sep = ' ')
 data = data.drop('usersid', axis=1)
 data = data.replace(np.NaN, 0)

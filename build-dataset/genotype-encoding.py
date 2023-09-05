@@ -15,7 +15,7 @@ import collections
 				Encoded SNP dataset
 """"
 
-file = 'dataset/preprocessed_matrix.csv'
+file = 'C:/Users/user/Documents/GitHub/SNP-ML/dataset/preprocessed_matrix.csv'
 data = pd.read_csv(file, sep = ' ')
 data = data.set_index('usersid')
 snps = data.columns
@@ -68,5 +68,5 @@ for snp in snps:
 	print(data[snp].head())
 	counter = counter + 1
 
-outfile = 'encoded_snp.csv'
+outfile = 'C:/Users/user/Documents/GitHub/SNP-ML/dataset/encoded_snp.csv'
 data.to_csv(outfile, sep = ' ')
