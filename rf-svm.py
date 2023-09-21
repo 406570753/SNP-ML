@@ -18,6 +18,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, confu
 # from sklearn.externals import joblib
 import joblib
 
+
 """
 	This script implements rf-svm on the SNP dataset.
 
@@ -57,8 +58,11 @@ convertLabel(data)
 y = data['Encode'].values
 
 loo = LeaveOneOut()
-loo.get_n_splits(X)
+loo.get_n_splits(X) # 28
 
+# max_depth: 樹的最大深度
+# n_estimators: 森林中樹木的數量，預設=100
+# random_state: 亂數種子，確保每次訓練結果都一樣，splitter=random 才有用
 for train_index, test_index in loo.split(X):
 	X_train, X_test = X[train_index], X[test_index]
 	y_train, y_test = y[train_index], y[test_index]
